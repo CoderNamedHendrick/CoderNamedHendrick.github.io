@@ -58,6 +58,10 @@ address {
   padding: 8px;
 }
 
+#page-contents {
+  font-size: 16px;
+}
+
 #header {
   padding: 15px;
 }
