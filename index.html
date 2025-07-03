@@ -1,421 +1,396 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sebastine Odeh - Mobile Developer Portfolio</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Sebastine Odeh - Expert Flutter & Mobile Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', 'Poppins', 'Nunito', sans-serif;
-            background: linear-gradient(135deg, #f7f8fa 0%, #f3f4f8 100%);
-            color: #232946;
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #334155; /* slate-700 */
         }
-
         .section-title {
-            @apply text-3xl font-bold mb-4 pb-2 border-b-2 border-blue-400 text-blue-700 tracking-tight;
-            letter-spacing: -0.5px;
+            @apply text-3xl font-bold text-slate-800 mb-8 text-center;
         }
-
         .card {
-            @apply bg-white p-4 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300;
-            box-shadow: 0 2px 12px 0 rgba(44, 62, 80, 0.06);
+            @apply bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:scale-105;
         }
-
-        .app-link-button, .app-link-button:visited {
-            background: none;
-            box-shadow: none;
-            border: none;
-            padding: 0;
+        .tag {
+            @apply inline-block bg-sky-100 text-sky-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full;
         }
-
-        .app-link-button.play-store {
-            @apply bg-purple-500 hover:bg-purple-600 focus:ring-purple-400;
-        }
-
-        .app-link-button.app-store {
-            @apply bg-purple-700 hover:bg-purple-800 focus:ring-purple-600;
-        }
-
-        /* New styles for app card animation */
-        .app-card {
-            transition: transform 0.2s, box-shadow 0.2s;
-            will-change: transform, box-shadow;
-        }
-
-        .app-card:hover {
-            transform: translateY(-4px) scale(1.01);
-            box-shadow: 0 8px 24px 0 rgba(44, 62, 80, 0.10);
-        }
-
-        /* Quicklinks nav custom style */
-        nav {
-            background: rgba(255,255,255,0.95);
-            border-radius: 1.25rem;
-            box-shadow: 0 2px 8px 0 rgba(44, 62, 80, 0.04);
-        }
-        nav a {
-            color: #3f51b5;
-            font-weight: 500;
-            border-radius: 0.5rem;
-            padding: 0.5rem 1rem;
-            margin: 0 0.25rem;
-            transition: background 0.2s, color 0.2s;
-        }
-        nav a:hover {
-            background: #e3e8ff;
-            color: #232946;
-            text-decoration: none;
+        .nav-link {
+             @apply text-slate-100 hover:text-sky-300 transition-colors duration-300;
         }
     </style>
 </head>
 
-<body class="antialiased">
-    <div class="container mx-auto p-6 lg:p-10 max-w-6xl">
-        <!-- Header Section -->
-        <header class="text-center mb-8 bg-white p-8 rounded-xl shadow-lg">
-            <h1 class="text-5xl font-extrabold text-gray-900 mb-2">Sebastine Odeh</h1>
-            <p class="text-xl text-gray-600 mb-6">Versatile Software Engineer & Mobile Development Expert</p>
-            <div class="flex flex-wrap justify-center gap-6 text-lg mb-6">
-                <a href="mailto:sebastinesoacatp@gmail.com"
-                    class="text-indigo-600 hover:text-indigo-800 transition-colors duration-200 flex items-center">
-                    <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                    </svg>
-                    sebastinesoacatp@gmail.com
-                </a>
-                <a href="https://github.com/CoderNamedHendrick" target="_blank"
-                    class="text-indigo-600 hover:text-indigo-800 transition-colors duration-200 flex items-center">
-                    <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                            d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.619.069-.605.069-.605 1.004.07 1.532 1.03 1.532 1.03.892 1.529 2.341 1.089 2.91.833.092-.647.35-1.089.636-1.338-2.22-.253-4.555-1.116-4.555-4.949 0-1.092.39-1.983 1.029-2.682-.103-.253-.446-1.272.098-2.65 0 0 .84-.268 2.75 1.022A9.607 9.607 0 0110 4.844c.85.004 1.701.113 2.502.337 1.909-1.29 2.747-1.022 2.747-1.022.546 1.379.202 2.398.1 2.651.64.699 1.029 1.59 1.029 2.682 0 3.842-2.339 4.69-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.579.688.482C17.136 18.196 20 14.446 20 10.017 20 4.484 15.522 0 10 0z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/sebastine-odeh-1081a318b/" target="_blank"
-                    class="text-indigo-600 hover:text-indigo-800 transition-colors duration-200 flex items-center">
-                    <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd"
-                            d="M16.338 16.338H13.67V12.16c0-.957-.018-2.188-1.335-2.188-1.337 0-1.543 1.042-1.543 2.124v4.242H8.338V8.75h2.56v1.11h.036c.357-.678 1.225-1.388 2.527-1.388 2.704 0 3.204 1.777 3.204 4.088v4.828zM5.61 7.51a1.906 1.906 0 01-1.904-1.904c0-1.05.854-1.906 1.904-1.906s1.906.856 1.906 1.906c0 1.05-.856 1.904-1.906 1.904zm2.728 8.828H2.882V8.75h5.456v7.588zM18 2H2a2 2 0 00-2 2v16a2 2 0 002 2h16a2 2 0 002-2V4a2 2 0 00-2-2z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    LinkedIn
-                </a>
-                <a href="https://medium.com/@sebastinesoacatp" target="_blank"
-                    class="text-indigo-600 hover:text-indigo-800 transition-colors duration-200 flex items-center">
-                    <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M7.41 10.63l-2.07 2.07c-.39.39-.39 1.02 0 1.41l2.07 2.07c.39.39 1.02.39 1.41 0l2.07-2.07c.39-.39.39-1.02 0-1.41l-2.07-2.07c-.39-.39-1.02-.39-1.41 0zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM17.41 7.63l-2.07 2.07c-.39.39-.39 1.02 0 1.41l2.07 2.07c.39.39 1.02.39 1.41 0l2.07-2.07c.39-.39.39-1.02 0-1.41l-2.07-2.07c-.39-.39-1.02-.39-1.41 0z">
-                        </path>
-                    </svg>
-                    Medium
-                </a>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="bg-slate-800 shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">Sebastine Odeh</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#opensource" class="nav-link">Open Source</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-        </header>
-        <!-- Quicklinks Navigation Bar -->
-        <nav class="sticky top-0 z-10 mb-10 flex justify-center bg-gradient-to-r from-purple-100 via-white to-purple-200/80 backdrop-blur rounded-xl shadow-md py-3 px-4 gap-4 flex-wrap">
-            <a href="#summary" class="text-purple-700 hover:bg-purple-100 px-3 py-1 rounded transition font-medium">Summary</a>
-            <a href="#skills" class="text-purple-700 hover:bg-purple-100 px-3 py-1 rounded transition font-medium">Skills</a>
-            <a href="#experience" class="text-purple-700 hover:bg-purple-100 px-3 py-1 rounded transition font-medium">Experience</a>
-            <a href="#open-source" class="text-purple-700 hover:bg-purple-100 px-3 py-1 rounded transition font-medium">Open-source</a>
-            <a href="#projects" class="text-purple-700 hover:bg-purple-100 px-3 py-1 rounded transition font-medium">Projects</a>
+            <div class="md:hidden">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
         </nav>
-        <!-- Professional Summary -->
-        <section id="summary" class="mb-14 card p-4">
-            <h2 class="section-title pb-4">Professional Summary</h2>
-            <p class="text-gray-700 leading-relaxed">
-                Versatile software engineer with 7 years of experience, including 5 years specialising in mobile
-                development. Flutter expert with a proven track record of transforming complex requirements into
-                elegant, scalable solutions across e-commerce and finance sectors. Passionate about test-driven
-                development and clean architecture principles, consistently delivering high-performance applications
-                that exceed client expectations. Committed to technical excellence and continuous innovation in the
-                mobile development landscape, I focus on creating maintainable, user-centric solutions, give talks to
-                share my experience building applications and also contributing to open-source.
-            </p>
-        </section>
-        <!-- Skills & Technologies -->
-        <section id="skills" class="mb-14 card p-4">
-            <h2 class="section-title pb-4">Skills & Technologies</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Proficient</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-1">
-                        <li>Dart (Flutter)</li>
-                        <li>Java/Kotlin (Android)</li>
-                        <li>Swift (SwiftUI)</li>
-                        <li>Git</li>
-                        <li>BLoC</li>
-                        <li>Riverpod</li>
-                        <li>Test-Driven Development (TDD)</li>
-                        <li>Domain Driven Design (DDD)</li>
-                        <li>Firebase</li>
-                        <li>Azure DevOps</li>
-                        <li>OneSignal</li>
-                        <li>CI/CD (Codemagic, GitHub Actions)</li>
-                    </ul>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 text-slate-200 hover:text-sky-300">About</a>
+            <a href="#projects" class="block py-2 text-slate-200 hover:text-sky-300">Projects</a>
+            <a href="#opensource" class="block py-2 text-slate-200 hover:text-sky-300">Open Source</a>
+            <a href="#experience" class="block py-2 text-slate-200 hover:text-sky-300">Experience</a>
+            <a href="#contact" class="block py-2 text-slate-200 hover:text-sky-300">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-slate-900 text-white py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Expert Flutter & Mobile Engineer</h1>
+            <p class="mt-4 text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">Transforming complex requirements into elegant, scalable solutions across e-commerce and finance.</p>
+            <div class="mt-8 flex justify-center gap-4 flex-wrap">
+                <a href="#contact" class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-lg transition-transform duration-300 transform hover:scale-105">Get In Touch</a>
+                <a href="#projects" class="bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-6 rounded-lg transition-transform duration-300 transform hover:scale-105">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">About Me</h2>
+            <div class="max-w-4xl mx-auto text-center text-slate-600 text-lg leading-relaxed">
+                <p>I'm a versatile software engineer with 7 years of experience, specializing in mobile development for the last 5 years. As a Flutter expert, I have a proven track record of transforming complex requirements into elegant, scalable solutions across the e-commerce and finance sectors.</p>
+                <p class="mt-4">Passionate about test-driven development and clean architecture, I consistently deliver high-performance applications that exceed client expectations. I'm committed to technical excellence and continuous innovation, focusing on creating maintainable, user-centric solutions. I also enjoy sharing my experience through public speaking and contributing to open-source projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Technologies -->
+    <section id="skills" class="bg-slate-100 py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="max-w-5xl mx-auto">
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-slate-700 mb-4 text-center">Proficient</h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span class="tag">Dart (Flutter)</span><span class="tag">Java/Kotlin (Android)</span><span class="tag">Swift (SwiftUI)</span><span class="tag">Git</span><span class="tag">BLoC</span><span class="tag">Riverpod</span><span class="tag">Test-Driven Development (TDD)</span><span class="tag">Domain-Driven Design (DDD)</span>
+                    </div>
                 </div>
                 <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Familiar</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-1">
-                        <li>Python</li>
-                        <li>JavaScript</li>
-                        <li>Go</li>
-                        <li>Rust</li>
-                    </ul>
+                    <h3 class="text-xl font-semibold text-slate-700 mb-4 text-center">Familiar</h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                         <span class="tag bg-slate-200 text-slate-600">Python</span><span class="tag bg-slate-200 text-slate-600">JavaScript</span><span class="tag bg-slate-200 text-slate-600">Go</span><span class="tag bg-slate-200 text-slate-600">Rust</span>
+                    </div>
+                </div>
+                 <div class="mt-8">
+                    <h3 class="text-xl font-semibold text-slate-700 mb-4 text-center">Tools</h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                         <span class="tag bg-green-100 text-green-800">Firebase</span><span class="tag bg-green-100 text-green-800">Azure DevOps</span><span class="tag bg-green-100 text-green-800">OneSignal</span><span class="tag bg-green-100 text-green-800">CI/CD (Codemagic, GitHub Actions)</span>
+                    </div>
                 </div>
             </div>
-        </section>
-        <!-- Work Experience -->
-        <section id="experience" class="mb-14 card p-4">
-            <h2 class="section-title pb-4">Work Experience</h2>
-            <div class="space-y-8">
-                <!-- Aku Fintech - Lead Software Development Engineer -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Lead Software Development Engineer</h3>
-                    <p class="text-indigo-600 font-medium">Aku Fintech <span class="text-gray-500 text-sm ml-2">Mar 2024
-                            - Present</span></p>
-                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                        <li>Spearheaded mobile app stability improvements by consistently increasing test coverage by
-                            10% month-over-month, bolstering system confidence.</li>
-                        <li>Analysed user behaviour analytics to discern critical features, driving a consistent
-                            month-over-month conversion rate increase of over 3%.</li>
-                        <li>Architected solutions leveraging Flutter, Jetpack Compose, BLoC, Riverpod, Firebase, Azure
-                            DevOps, and Test-Driven-Development (TDD), driving project success and efficiency.</li>
+        </div>
+    </section>
+
+    <!-- Projects Showcase -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- App Item 1 -->
+                <div class="card">
+                    <img class="h-48 w-full object-cover" src="https://play-lh.googleusercontent.com/Pjp0x6RPbhHOKdSiyppNBHqxXc5rcqXrdtvRXhXA4nDcx7gMGmJNqNSH6CPGYKR5Muw=s48-rw" alt="Aku App Icon">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-slate-800">Aku</h3>
+                        <p class="text-slate-600 text-base mb-4">Accelerated customer acquisition to over 5,000 new customers and 1,000 agents. Strengthened product stability through DDD & TDD, increasing test coverage by over 40%.</p>
+                        <div class="flex flex-col gap-2">
+                            <a href="https://play.google.com/store/apps/details?id=com.aku.customer.app&hl=en" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">Play Store</a>
+                            <a href="https://apps.apple.com/us/app/aku/id1609211914" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">App Store</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- App Item 2 -->
+                <div class="card">
+                    <img class="h-48 w-full object-cover" src="https://play-lh.googleusercontent.com/swSUEdpWZLXfDlvRsHqdDB1dKpyDvS6mXoh4GNxUWeVS_4QnghziAo_sZZF-UjW92Bvc=s48-rw" alt="Aku Agents App Icon">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-slate-800">Aku Agents</h3>
+                        <p class="text-slate-600 text-base mb-4">Agent onboarding and management for Aku Fintech. Empowered agents to serve customers efficiently and securely.</p>
+                        <div class="flex flex-col gap-2">
+                            <a href="https://play.google.com/store/apps/details?id=com.aku.agent.app&hl=en" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">Play Store</a>
+                            <a href="https://apps.apple.com/us/app/aku-agents/id6444590183" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">App Store</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- App Item 3 -->
+                <div class="card">
+                    <img class="h-48 w-full object-cover" src="https://play-lh.googleusercontent.com/nRVJPCOcxfR385HL9V0GP2L2ZLyiv0Wz5EhHqLuaeEvCdIAnVVlRyu9CQ-oKm_kQZ2Zk=w240-h480-rw" alt="Bank 78 App Icon">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-slate-800">Bank 78</h3>
+                        <p class="text-slate-600 text-base mb-4">Led a team of engineers, achieving over 60% test coverage with TDD. Orchestrated CI/CD pipelines and leveraged analytics to secure a loyal base of 2,000+ customers.</p>
+                        <div class="flex flex-col gap-2">
+                            <a href="https://play.google.com/store/apps/details?id=com.bank78.mobile_app&" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">Play Store</a>
+                            <a href="https://apps.apple.com/us/app/bank-78/id6470311222" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">App Store</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- App Item 4 -->
+                <div class="card">
+                    <img class="h-48 w-full object-cover" src="https://play-lh.googleusercontent.com/L5LjhYZFjAu0FIVBmu4fixFmHXVv87ZhvreTCasJpGKmqYAKJ5tV_txoVKC9bfLfmw=w240-h480-rw" alt="Zamry Authenticator App Icon">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-slate-800">Zamry Authenticator</h3>
+                        <p class="text-slate-600 text-base mb-4">Secure 2FA and authentication for users. Available on Android and iOS.</p>
+                        <div class="flex flex-col gap-2">
+                            <a href="https://play.google.com/store/apps/details?id=com.zamry.android" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">Play Store</a>
+                            <a href="https://apps.apple.com/ng/app/zamry/id6746409647" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">App Store</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- App Item 5 -->
+                <div class="card">
+                    <img class="h-48 w-full object-cover" src="https://play-lh.googleusercontent.com/Ij7qd0rIzSPoe4X5GhbQRXgRo8_zP2q2vL9kRoji9WIc7E8NDblebHTtCBoXx_ql9UE=s48-rw" alt="Faith Companion App Icon">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-slate-800">Faith Companion</h3>
+                        <p class="text-slate-600 text-base mb-4">A faith-based companion app for daily devotionals and community engagement.</p>
+                        <div class="flex flex-col gap-2">
+                            <a href="https://play.google.com/store/apps/details?id=com.faith.companion.app" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">Play Store</a>
+                            <a href="https://apps.apple.com/za/app/faith-companion/id6479662568" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">App Store</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- App Item 6 -->
+                <div class="card">
+                    <img class="h-48 w-full object-cover" src="https://play-lh.googleusercontent.com/RR8x018EAr1Z9bCsyCqEvlsOmvRcshbuhN1D2gmLHFaZ-DbZ8kl6hSE9r9zwZmHxM4Q=w240-h480-rw" alt="Citypass App Icon">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-slate-800">Citypass</h3>
+                        <p class="text-slate-600 text-base mb-4">City access and ticketing app for urban mobility and events.</p>
+                        <div class="flex flex-col gap-2">
+                            <a href="https://play.google.com/store/apps/details?id=com.aku.citypass.app" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">Play Store</a>
+                            <a href="https://apps.apple.com/ng/app/citypas/id6741069304" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">App Store</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- App Item 7 -->
+                <div class="card">
+                    <img class="h-48 w-full object-cover" src="https://play-lh.googleusercontent.com/c6_IiZipZAxjkYpjPrtuq63X8umnQuyuU_A82sYDsdQS49AgSsYtKJ9TdwKuOMTtJQ=w240-h480-rw" alt="CityPass Merchant App Icon">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-slate-800">CityPass Merchant</h3>
+                        <p class="text-slate-600 text-base mb-4">Merchant app for Citypass partners to manage sales and validate tickets.</p>
+                        <div class="flex flex-col gap-2">
+                            <a href="https://play.google.com/store/apps/details?id=com.aku.citypass_merchant.app" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">Play Store</a>
+                            <a href="https://apps.apple.com/ng/app/citypass-merchant/id6741530722" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">App Store</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- App Item 8 -->
+                <div class="card">
+                    <img class="h-48 w-full object-cover" src="https://play-lh.googleusercontent.com/9vrsJ_hFW-UEoDeiqoJ3jni1FXZCWcpw7Qu8ndlzoKkp341Bd23CDPWeIvZD1McgL0g8=w240-h480-rw" alt="Aje App Icon">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-slate-800">Aje</h3>
+                        <p class="text-slate-600 text-base mb-4">Aje is a digital wallet and payment solution for seamless transactions.</p>
+                        <div class="flex flex-col gap-2">
+                            <a href="https://play.google.com/store/apps/details?id=com.aje.app&hl=it" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">Play Store</a>
+                            <a href="https://apps.apple.com/ng/app/aj%C3%A9/id1620800198" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">App Store</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- App Item 9 -->
+                <div class="card">
+                    <img class="h-48 w-full object-cover" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3b/56/ac/3b56ac0d-c08d-a365-ff9b-e759db9c98b9/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/230x0w.webp" alt="Devfest 24 App Icon">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-slate-800">Devfest 24</h3>
+                        <p class="text-slate-600 text-base mb-4">Official app for DevFest Lagos 2024. Event info, agenda, and more.</p>
+                        <div class="flex flex-col gap-2">
+                            <a href="#" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold opacity-50 cursor-not-allowed">Play Store</a>
+                            <a href="https://apps.apple.com/ng/app/devfest-lagos-2024/id6737826901" target="_blank" class="flex items-center gap-2 text-sky-600 hover:text-sky-800 font-semibold">App Store</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Open Source -->
+    <section id="opensource" class="bg-slate-100 py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Open Source</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-lg mb-1 text-slate-800">DevFest Lagos Apps (2022-2024)</h3>
+                    <p class="text-slate-600 mb-3">Contributed to the mobile apps for DevFest Lagos, serving over 7,000 attendees. Added features like event details, agendas, and a custom event map.</p>
+                    <a href="https://github.com/geektutor/devfestlagos2022" class="font-semibold text-sky-600 hover:text-sky-800" target="_blank">View devfest22 &rarr;</a>
+                    <a href="https://github.com/flutter-lagos/devfest23" class="font-semibold text-sky-600 hover:text-sky-800 ml-4" target="_blank">View devfest23 &rarr;</a>
+                    <a href="https://github.com/GDG-W/cave" class="font-semibold text-sky-600 hover:text-sky-800 ml-4" target="_blank">View devfest24 &rarr;</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-lg mb-1 text-slate-800">Schematics</h3>
+                    <p class="text-slate-600 mb-3">Authored a package for creating 2D schematic map layouts and grid outputs for navigation algorithms. Over 300+ lifetime downloads.</p>
+                    <a href="https://pub.dev/packages/schematics" class="font-semibold text-sky-600 hover:text-sky-800" target="_blank">View on pub.dev &rarr;</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-lg mb-1 text-slate-800">Solar Icons</h3>
+                    <p class="text-slate-600 mb-3">A Flutter package featuring over 7,000 icons in various styles. Over 3,000+ lifetime downloads and 30+ likes.</p>
+                    <a href="https://pub.dev/packages/solar_icons" class="font-semibold text-sky-600 hover:text-sky-800" target="_blank">View on pub.dev &rarr;</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-lg mb-1 text-slate-800">Super Extensions</h3>
+                    <p class="text-slate-600 mb-3">Combines frequently used extension methods into a single package for convenient reuse across multiple projects.</p>
+                    <a href="https://pub.dev/packages/super_extensions" class="font-semibold text-sky-600 hover:text-sky-800" target="_blank">View on pub.dev &rarr;</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-lg mb-1 text-slate-800">Declarative Mobile Frameworks</h3>
+                    <p class="text-slate-600 mb-3">Demonstrated using Flutter to communicate with native platforms, including native views, through multiple approaches.</p>
+                    <a href="https://github.com/CoderNamedHendrick/declarative_mobile_frameworks" class="font-semibold text-sky-600 hover:text-sky-800" target="_blank">View on GitHub &rarr;</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-lg mb-1 text-slate-800">Dart Twitter API</h3>
+                    <p class="text-slate-600 mb-3">Dart wrapper for Twitter V1 API endpoints, offering simplified authentication and customizable search queries for seamless Twitter integration.</p>
+                    <a href="https://pub.dev/packages/dart_twitter_api" class="font-semibold text-sky-600 hover:text-sky-800" target="_blank">View on pub.dev &rarr;</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-lg mb-1 text-slate-800">cache_manager_plus</h3>
+                    <p class="text-slate-600 mb-3">A Dart package for managing cache with support for multiple storage backends.</p>
+                    <a href="https://pub.dev/packages/cache_manager_plus" class="font-semibold text-sky-600 hover:text-sky-800" target="_blank">View on pub.dev &rarr;</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-lg mb-1 text-slate-800">cache_manager_plus_utils</h3>
+                    <p class="text-slate-600 mb-3">Utility package for cache_manager_plus, including HiveCacheStore and key composition utilities.</p>
+                    <a href="https://pub.dev/packages/cache_manager_plus_utils" class="font-semibold text-sky-600 hover:text-sky-800" target="_blank">View on pub.dev &rarr;</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-lg mb-1 text-slate-800">strange_icons</h3>
+                    <p class="text-slate-600 mb-3">A Flutter icon pack with 6 icon sets and over 3000 icons in monotone and solid styles.</p>
+                    <a href="https://pub.dev/packages/strange_icons" class="font-semibold text-sky-600 hover:text-sky-800" target="_blank">View on pub.dev &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section id="experience" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="max-w-3xl mx-auto relative border-l-2 border-sky-200 pl-10">
+                <div class="mb-10">
+                    <div class="absolute w-4 h-4 bg-sky-600 rounded-full -left-2 mt-1.5"></div>
+                    <p class="text-sm font-medium text-sky-600">Mar 2024 - Present</p>
+                    <h3 class="text-xl font-bold text-slate-800">Lead Software Development Engineer</h3>
+                    <p class="text-md text-slate-500">Aku Fintech</p>
+                    <ul class="list-disc list-inside text-slate-600 mt-2 space-y-1">
+                        <li>Spearheaded mobile app stability improvements by consistently increasing test coverage by 10% month-over-month, bolstering system confidence.</li>
+                        <li>Analysed user behaviour analytics to discern critical features, driving a consistent month-over-month conversion rate increase of over 3%.</li>
+                        <li>Architected solutions leveraging Flutter, Jetpack Compose, BLoC, Riverpod, Firebase, Azure DevOps, and Test-Driven-Development (TDD), driving project success and efficiency.</li>
                     </ul>
                 </div>
-                <!-- Bank 78 - Lead Mobile Engineer -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Lead Mobile Engineer</h3>
-                    <p class="text-indigo-600 font-medium">Bank 78 <span class="text-gray-500 text-sm ml-2">Jul 2023 -
-                            Apr 2024</span></p>
-                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                        <li>Directed a team of 2+ engineers, fostering a culture of efficiency and high-quality delivery
-                            while ensuring scalable and maintainable feature development.</li>
-                        <li>Capitalised on test-driven development principles to achieve over 60% test coverage across
-                            all layers, ensuring a reliable and robust product.</li>
-                        <li>Documented processes and architectures, reducing onboarding time for new developers by 30%.
-                        </li>
-                        <li>Orchestrated CI/CD pipelines using Codemagic to streamline deployments to various tracks:
-                            dev, QA (Firebase App Distribution), and production (App Store, Google Play Store).</li>
-                        <li>Leveraged user behaviour analytics to enhance the user experience, securing a loyal base of
-                            2,000+ customers.</li>
-                        <li>Championed robust solutions utilising Flutter, Swiftui, Jetpack Compose, Riverpod, Firebase,
-                            and Codemagic.</li>
+                <div class="mb-10">
+                    <div class="absolute w-4 h-4 bg-sky-600 rounded-full -left-2 mt-1.5"></div>
+                    <p class="text-sm font-medium text-sky-600">Jul 2023 - Apr 2024</p>
+                    <h3 class="text-xl font-bold text-slate-800">Lead Mobile Engineer</h3>
+                    <p class="text-md text-slate-500">Bank 78</p>
+                    <ul class="list-disc list-inside text-slate-600 mt-2 space-y-1">
+                        <li>Directed a team of 2+ engineers, fostering a culture of efficiency and high-quality delivery while ensuring scalable and maintainable feature development.</li>
+                        <li>Capitalised on test-driven development principles to achieve over 60% test coverage across all layers, ensuring a reliable and robust product.</li>
+                        <li>Documented processes and architectures, reducing onboarding time for new developers by 30%.</li>
+                        <li>Orchestrated CI/CD pipelines using Codemagic to streamline deployments to various tracks: dev, QA (Firebase App Distribution), and production (App Store, Google Play Store).</li>
+                        <li>Leveraged user behaviour analytics to enhance the user experience, securing a loyal base of 2,000+ customers.</li>
+                        <li>Championed robust solutions utilising Flutter, Swiftui, Jetpack Compose, Riverpod, Firebase, and Codemagic.</li>
                     </ul>
                 </div>
-                <!-- Aku Fintech - Software Development Engineer -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Software Development Engineer</h3>
-                    <p class="text-indigo-600 font-medium">Aku Fintech <span class="text-gray-500 text-sm ml-2">Mar 2022
-                            - Oct 2023</span></p>
-                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                        <li>Accelerated customer acquisition, resulting in over 5,000 new customers and 1,000 agents
-                            during the launch period.</li>
-                        <li>Strengthened product stability through domain-driven and test-driven development, increasing
-                            test coverage by over 40%.</li>
+                <div class="mb-10">
+                    <div class="absolute w-4 h-4 bg-sky-600 rounded-full -left-2 mt-1.5"></div>
+                    <p class="text-sm font-medium text-sky-600">Mar 2022 - Oct 2023</p>
+                    <h3 class="text-xl font-bold text-slate-800">Software Development Engineer</h3>
+                    <p class="text-md text-slate-500">Aku Fintech</p>
+                    <ul class="list-disc list-inside text-slate-600 mt-2 space-y-1">
+                        <li>Accelerated customer acquisition, resulting in over 5,000 new customers and 1,000 agents during the launch period.</li>
+                        <li>Strengthened product stability through domain-driven and test-driven development, increasing test coverage by over 40%.</li>
                         <li>Delivered timely issue resolutions, maintaining an average response time of 10 days.</li>
-                        <li>Developed innovative solutions utilising Flutter, Jetpack Compose, BLoC, Riverpod, Firebase,
-                            DDD, and TDD.</li>
+                        <li>Developed innovative solutions utilising Flutter, Jetpack Compose, BLoC, Riverpod, Firebase, DDD, and TDD.</li>
                     </ul>
                 </div>
-                <!-- Sterling Bank Plc - Mobile App Developer (Contract) -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Mobile App Developer (Contract)</h3>
-                    <p class="text-indigo-600 font-medium">Sterling Bank Plc <span
-                            class="text-gray-500 text-sm ml-2">Nov 2021 - May 2022</span></p>
-                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                        <li>Designed and developed a mobile user interface for a stealth insurance product targeting a
-                            potential market of over 1 million customers.</li>
+                <div class="mb-10">
+                    <div class="absolute w-4 h-4 bg-sky-600 rounded-full -left-2 mt-1.5"></div>
+                    <p class="text-sm font-medium text-sky-600">Nov 2021 - May 2022</p>
+                    <h3 class="text-xl font-bold text-slate-800">Mobile App Developer (Contract)</h3>
+                    <p class="text-md text-slate-500">Sterling Bank Plc</p>
+                    <ul class="list-disc list-inside text-slate-600 mt-2 space-y-1">
+                        <li>Designed and developed a mobile user interface for a stealth insurance product targeting a potential market of over 1 million customers.</li>
                         <li>Prioritised intuitive UI development, reducing project completion time by 40%.</li>
-                        <li>Achieved aggressive delivery milestones, presenting a functional demo to senior management
-                            within five weeks.</li>
+                        <li>Achieved aggressive delivery milestones, presenting a functional demo to senior management within five weeks.</li>
                     </ul>
                 </div>
-                <!-- 4000 Years - Mobile App Developer -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Mobile App Developer</h3>
-                    <p class="text-indigo-600 font-medium">4000 Years <span class="text-gray-500 text-sm ml-2">Mar 2021
-                            - Oct 2021</span></p>
-                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                        <li>Created a robust e-commerce application supporting payments in Naira, USD, and an in-app
-                            currency (Tele), facilitating secure transactions.</li>
-                        <li>Onboarded over 2,000 users, including buyers and sellers, while integrating escrow services
-                            for secure payments with close to 100% validation accuracy.</li>
+                <div class="mb-10">
+                    <div class="absolute w-4 h-4 bg-sky-600 rounded-full -left-2 mt-1.5"></div>
+                    <p class="text-sm font-medium text-sky-600">Mar 2021 - Oct 2021</p>
+                    <h3 class="text-xl font-bold text-slate-800">Mobile App Developer</h3>
+                    <p class="text-md text-slate-500">4000 Years</p>
+                    <ul class="list-disc list-inside text-slate-600 mt-2 space-y-1">
+                        <li>Created a robust e-commerce application supporting payments in Naira, USD, and an in-app currency (Tele), facilitating secure transactions.</li>
+                        <li>Onboarded over 2,000 users, including buyers and sellers, while integrating escrow services for secure payments with close to 100% validation accuracy.</li>
                         <li>Streamlined release pipelines using GitHub Actions for seamless deployments.</li>
                     </ul>
                 </div>
-                <!-- Podici - Mobile App Developer -->
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Mobile App Developer</h3>
-                    <p class="text-indigo-600 font-medium">Podici <span class="text-gray-500 text-sm ml-2">Aug 2020 -
-                            Mar 2021</span></p>
-                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                        <li>Initiated and managed the development of a mobile application connecting artisans with
-                            clients, focusing on tailoring services.</li>
-                        <li>Transformed design concepts into a functional, user-friendly interface to ensure high
-                            usability.</li>
+                <div class="mb-10">
+                    <div class="absolute w-4 h-4 bg-sky-600 rounded-full -left-2 mt-1.5"></div>
+                    <p class="text-sm font-medium text-sky-600">Aug 2020 - Mar 2021</p>
+                    <h3 class="text-xl font-bold text-slate-800">Mobile App Developer</h3>
+                    <p class="text-md text-slate-500">Podici</p>
+                    <ul class="list-disc list-inside text-slate-600 mt-2 space-y-1">
+                        <li>Initiated and managed the development of a mobile application connecting artisans with clients, focusing on tailoring services.</li>
+                        <li>Transformed design concepts into a functional, user-friendly interface to ensure high usability.</li>
                         <li>Tailored mobile app solution using Flutter, Provider and Firebase.</li>
                     </ul>
                 </div>
             </div>
-        </section>
-        <!-- Open-source -->
-        <section id="open-source" class="mb-14 card p-4">
-            <h2 class="section-title pb-4">Open-source</h2>
-            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                <li><span class="font-semibold">DevFest Lagos Apps (2022, 2023, 2024):</span> Contributed to the mobile
-                    applications for DevFest Lagos events across three years. Designed features enabling attendees to
-                    access event details, sessions, agendas, and speakers serving over 7000 attendees across the years.
-                    I introduced a custom event map and navigation feature in the 2024 version. See <a href="https://github.com/geektutor/devfestlagos2022" target="_blank" class="text-indigo-600 hover:underline">devfest22</a>, <a href="https://github.com/flutter-lagos/devfest23" target="_blank" class="text-indigo-600 hover:underline">devfest23</a>, and <a href="https://github.com/GDG-W/cave" target="_blank" class="text-indigo-600 hover:underline">devfest24</a>.</li>
-                <li><span class="font-semibold">Schematics:</span> Authored a package for creating 2d schematic map
-                    layouts and grid outputs for navigation algorithms, demonstrating expertise in modular design and
-                    Flutter development. With over 300 lifetime downloads, you can find the package on <a
-                        href="https://pub.dev/packages/schematics" target="_blank"
-                        class="text-indigo-600 hover:underline">pub.dev</a>.</li>
-                <li><span class="font-semibold">Solar Icons:</span> A Flutter package featuring over 7,000 icons in
-                    various styles, available on <a href="https://pub.dev/packages/solar_icons" target="_blank"
-                        class="text-indigo-600 hover:underline">pub.dev</a>. With over 3000 lifetime downloads and 30+
-                    likes.</li>
-                <li><span class="font-semibold">Declarative Mobile Frameworks:</span> Demonstrated using Flutter to
-                    communicate with native platforms, including native views, through multiple approaches. See on <a
-                        href="https://github.com/CoderNamedHendrick/declarative_mobile_frameworks" target="_blank" class="text-indigo-600 hover:underline">GitHub</a>.</li>
-                <li><span class="font-semibold">Super Extensions:</span> Combines frequently used extension methods into
-                    a single package for convenient reuse across multiple projects. See on <a
-                        href="https://pub.dev/packages/super_extensions" target="_blank"
-                        class="text-indigo-600 hover:underline">pub.dev</a>.</li>
-                <li><span class="font-semibold">Dart Twitter API:</span> Dart wrapper for Twitter V1 API endpoints,
-                    offering simplified authentication and customisable search queries for seamless Twitter integration.
-                    See on <a href="https://pub.dev/packages/dart_twitter_api" target="_blank"
-                        class="text-indigo-600 hover:underline">pub.dev</a>.</li>
-                <li><span class="font-semibold">cache_manager_plus:</span> A Dart package for managing cache with support for multiple storage backends. See on <a href="https://pub.dev/packages/cache_manager_plus" target="_blank" class="text-indigo-600 hover:underline">pub.dev</a>.</li>
-                <li><span class="font-semibold">cache_manager_plus_utils:</span> Utility package for cache_manager_plus, including HiveCacheStore and key composition utilities. See on <a href="https://pub.dev/packages/cache_manager_plus_utils" target="_blank" class="text-indigo-600 hover:underline">pub.dev</a>.</li>
-                <li><span class="font-semibold">strange_icons:</span> A Flutter icon pack with 6 icon sets and over 3000 icons in monotone and solid styles. See on <a href="https://pub.dev/packages/strange_icons" target="_blank" class="text-indigo-600 hover:underline">pub.dev</a>.</li>
-            </ul>
-        </section>
-        <!-- Projects -->
-        <section id="projects" class="mb-14 card p-4">
-            <h2 class="section-title pb-4">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Aku -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md flex flex-col items-center text-center app-card">
-                    <img src="https://play-lh.googleusercontent.com/Pjp0x6RPbhHOKdSiyppNBHqxXc5rcqXrdtvRXhXA4nDcx7gMGmJNqNSH6CPGYKR5Muw=s48-rw" alt="Aku App Icon" class="w-24 h-24 rounded-full mb-4 shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Aku</h3>
-                    <a href="https://play.google.com/store/apps/details?id=com.aku.customer.app&hl=en" target="_blank" class="mb-2">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-14 w-auto" style="min-width:120px;"/>
-                    </a>
-                    <a href="https://apps.apple.com/us/app/aku/id1609211914" target="_blank">
-                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-10 w-auto" style="min-width:120px;"/>
-                    </a>
-                </div>
+        </div>
+    </section>
 
-                <!-- Aku Agents -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md flex flex-col items-center text-center app-card">
-                    <img src="https://play-lh.googleusercontent.com/swSUEdpWZLXfDlvRsHqdDB1dKpyDvS6mXoh4GNxUWeVS_4QnghziAo_sZZF-UjW92Bvc=s48-rw" alt="Aku Agents App Icon" class="w-24 h-24 rounded-full mb-4 shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Aku Agents</h3>
-                    <a href="https://play.google.com/store/apps/details?id=com.aku.agent.app&hl=en" target="_blank" class="mb-2">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-14 w-auto" style="min-width:120px;"/>
-                    </a>
-                    <a href="https://apps.apple.com/us/app/aku-agents/id6444590183" target="_blank">
-                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-10 w-auto" style="min-width:120px;"/>
-                    </a>
-                </div>
-
-                <!-- Bank 78 -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md flex flex-col items-center text-center app-card">
-                    <img src="https://play-lh.googleusercontent.com/nRVJPCOcxfR385HL9V0GP2L2ZLyiv0Wz5EhHqLuaeEvCdIAnVVlRyu9CQ-oKm_kQZ2Zk=w240-h480-rw" alt="Bank 78 App Icon" class="w-24 h-24 rounded-full mb-4 shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Bank 78</h3>
-                    <a href="https://play.google.com/store/apps/details?id=com.bank78.mobile_app&" target="_blank" class="mb-2">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-14 w-auto" style="min-width:120px;"/>
-                    </a>
-                    <a href="https://apps.apple.com/us/app/bank-78/id6470311222" target="_blank">
-                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-10 w-auto" style="min-width:120px;"/>
-                    </a>
-                </div>
-
-                <!-- Zamry Authenticator -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md flex flex-col items-center text-center app-card">
-                    <img src="https://play-lh.googleusercontent.com/L5LjhYZFjAu0FIVBmu4fixFmHXVv87ZhvreTCasJpGKmqYAKJ5tV_txoVKC9bfLfmw=w240-h480-rw" alt="Zamry Authenticator App Icon" class="w-24 h-24 rounded-full mb-4 shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Zamry Authenticator</h3>
-                    <a href="https://play.google.com/store/apps/details?id=com.zamry.android" target="_blank" class="mb-2">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-14 w-auto" style="min-width:120px;"/>
-                    </a>
-                    <a href="https://apps.apple.com/ng/app/zamry/id6746409647" target="_blank">
-                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-10 w-auto" style="min-width:120px;"/>
-                    </a>
-                </div>
-
-                <!-- Faith Companion -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md flex flex-col items-center text-center app-card">
-                    <img src="https://play-lh.googleusercontent.com/Ij7qd0rIzSPoe4X5GhbQRXgRo8_zP2q2vL9kRoji9WIc7E8NDblebHTtCBoXx_ql9UE=s48-rw" alt="Faith Companion App Icon" class="w-24 h-24 rounded-full mb-4 shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Faith Companion</h3>
-                    <a href="https://play.google.com/store/apps/details?id=com.faith.companion.app" target="_blank" class="mb-2">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-14 w-auto" style="min-width:120px;"/>
-                    </a>
-                    <a href="https://apps.apple.com/za/app/faith-companion/id6479662568" target="_blank">
-                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-10 w-auto" style="min-width:120px;"/>
-                    </a>
-                </div>
-
-                <!-- Citypass -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md flex flex-col items-center text-center app-card">
-                    <img src="https://play-lh.googleusercontent.com/RR8x018EAr1Z9bCsyCqEvlsOmvRcshbuhN1D2gmLHFaZ-DbZ8kl6hSE9r9zwZmHxM4Q=w240-h480-rw" alt="Citypass App Icon" class="w-24 h-24 rounded-full mb-4 shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Citypass</h3>
-                    <a href="https://play.google.com/store/apps/details?id=com.aku.citypass.app" target="_blank" class="mb-2">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-14 w-auto" style="min-width:120px;"/>
-                    </a>
-                    <a href="https://apps.apple.com/ng/app/citypas/id6741069304" target="_blank">
-                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-10 w-auto" style="min-width:120px;"/>
-                    </a>
-                </div>
-
-                <!-- CityPass Merchant -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md flex flex-col items-center text-center app-card">
-                    <img src="https://play-lh.googleusercontent.com/c6_IiZipZAxjkYpjPrtuq63X8umnQuyuU_A82sYDsdQS49AgSsYtKJ9TdwKuOMTtJQ=w240-h480-rw" alt="CityPass Merchant App Icon" class="w-24 h-24 rounded-full mb-4 shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">CityPass Merchant</h3>
-                    <a href="https://play.google.com/store/apps/details?id=com.aku.citypass_merchant.app" target="_blank" class="mb-2">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-14 w-auto" style="min-width:120px;"/>
-                    </a>
-                    <a href="https://apps.apple.com/ng/app/citypass-merchant/id6741530722" target="_blank">
-                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-10 w-auto" style="min-width:120px;"/>
-                    </a>
-                </div>
-
-                <!-- Aje -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md flex flex-col items-center text-center app-card">
-                    <img src="https://play-lh.googleusercontent.com/9vrsJ_hFW-UEoDeiqoJ3jni1FXZCWcpw7Qu8ndlzoKkp341Bd23CDPWeIvZD1McgL0g8=w240-h480-rw" alt="Aje App Icon" class="w-24 h-24 rounded-full mb-4 shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Aje</h3>
-                    <a href="https://play.google.com/store/apps/details?id=com.aje.app&hl=it" target="_blank" class="mb-2">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-14 w-auto" style="min-width:120px;"/>
-                    </a>
-                    <a href="https://apps.apple.com/ng/app/aj%C3%A9/id1620800198" target="_blank">
-                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-10 w-auto" style="min-width:120px;"/>
-                    </a>
-                </div>
-
-                <!-- Devfest 24 -->
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md flex flex-col items-center text-center app-card">
-                    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3b/56/ac/3b56ac0d-c08d-a365-ff9b-e759db9c98b9/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/230x0w.webp" alt="Devfest 24 App Icon" class="w-24 h-24 rounded-full mb-4 shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Devfest 24</h3>
-                    <a href="#" target="_blank" class="mb-2 opacity-50 cursor-not-allowed">
-                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-14 w-auto" style="min-width:120px;"/>
-                    </a>
-                    <a href="https://apps.apple.com/ng/app/devfest-lagos-2024/id6737826901" target="_blank">
-                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-10 w-auto" style="min-width:120px;"/>
-                    </a>
-                </div>
+    <!-- Contact Section -->
+    <section id="contact" class="bg-slate-800 text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Let's Build Something Great</h2>
+            <p class="text-slate-300 max-w-2xl mx-auto mb-8">I'm always excited to discuss new projects and opportunities. Feel free to reach out!</p>
+            <a href="mailto:sebastinesoacatp@gmail.com" class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform duration-300 transform hover:scale-105 inline-block">sebastinesoacatp@gmail.com</a>
+            <div class="mt-10 flex justify-center gap-6">
+                <a href="https://github.com/CoderNamedHendrick" class="text-slate-400 hover:text-white transition-colors duration-300" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/sebastine-odeh-1081a318b/" class="text-slate-400 hover:text-white transition-colors duration-300" target="_blank">LinkedIn</a>
+                <a href="https://medium.com/@sebastinesoacatp" class="text-slate-400 hover:text-white transition-colors duration-300" target="_blank">Medium</a>
             </div>
-        </section>
-        <!-- Footer -->
-        <footer class="text-center text-gray-500 text-sm mt-12 py-6 border-t border-gray-200">
-            &copy; 2025 Sebastine Odeh. All rights reserved.
-        </footer>
-    </div>
-</body>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Sebastine Odeh. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
 </html>
